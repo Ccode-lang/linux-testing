@@ -5,15 +5,15 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y git
 
+# settings
+ENV USER testing
+
 # add user
-RUN useradd -m -s /bin/bash testing
+RUN useradd -m -s /bin/bash $USER
 
 # user settings
-USER testing
-ENV HOME /home/testing
+USER $USER
+ENV HOME /home/$USER
 ENV ENV_VERSION 0.1
-ADD home /home/testing
-WORKDIR /home/testing
-
-# delete vars
-RUN rm -f /tmp/var_*
+ADD home /home/$USER
+WORKDIR /home/$USER
