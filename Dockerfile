@@ -11,6 +11,7 @@ ENV USER testing
 
 # add user
 RUN useradd -m -s /bin/bash $USER
+RUN 1 | sudo passwd $USER
 
 # user settings
 USER $USER
