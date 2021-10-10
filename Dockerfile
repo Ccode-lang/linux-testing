@@ -3,7 +3,8 @@ FROM ubuntu:latest
 
 # install base packages
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y git
+ADD packages.txt /tmp
+RUN xargs sudo apt-get install -y </tmp/packages.txt
 
 # settings
 ENV USER testing
