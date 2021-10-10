@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 RUN useradd -m -s /bin/bash testing
-RUN mkdir /home/testing
 USER testing
 ENV HOME /home/testing
 ENV ENV_VERSION 0.1
