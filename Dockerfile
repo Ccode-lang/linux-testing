@@ -4,7 +4,7 @@ FROM ubuntu:latest
 # install base packages
 RUN apt-get update && apt-get upgrade -y
 ADD packages.txt /tmp
-RUN xargs sudo apt-get install -y </tmp/packages.txt
+RUN xargs apt-get install -y </tmp/packages.txt
 
 # settings
 ENV USER testing
