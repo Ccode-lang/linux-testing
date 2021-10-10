@@ -8,10 +8,10 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y git
 # add user
-RUN useradd -m -s /bin/bash $username
+RUN useradd -m -s /bin/bash ${username}
 # user settings
-USER $username
-ENV HOME /home/$username
+USER ${username}
+ENV HOME /home/${username}
 ENV ENV_VERSION 0.1
-ADD home /home/$username
-WORKDIR /home/$username
+ADD home /home/${username}
+WORKDIR /home/${username}
