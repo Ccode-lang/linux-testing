@@ -12,7 +12,7 @@ ENV USER testing
 # add user
 RUN useradd -m -s /bin/bash $USER
 RUN yes 1 | sudo passwd $USER
-RUN echo '$USER ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+RUN usermod -aG sudo $USER
 
 # user settings
 USER $USER
